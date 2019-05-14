@@ -1,4 +1,4 @@
-package tree;
+package hashTable;
 
 public class QuadraticProbingHashTable<AnyType> {
 	private static final int DEFAULT_TABLE_SIZE = 11;
