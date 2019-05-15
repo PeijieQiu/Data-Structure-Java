@@ -3,6 +3,7 @@ package hashTable;
 import java.util.LinkedList;
 import java.util.List;
 
+@SuppressWarnings("Duplicates")
 public class SeperateChainingHashTable<AnyType> {
 
     private static final int DEFAULT_TABLE_SIZE = 101;
