@@ -108,18 +108,17 @@ public class SeperateChainingHashTable<AnyType> {
     }
 
     private static int nextPrime(int n) {
-
-        n++;
-
-        while (!isPrime(n)) {
+        if (n <= 0)
+            n = 3;
+        if (n % 2 == 0)
             n++;
-        }
+        for (; !isPrime(n); n += 2)
+            ;
 
         return n;
     }
 
     private static boolean isPrime(int n) {
-
         if (n == 2 || n == 3)
             return true;
         else if (n % 2 == 0 || n == 1)
