@@ -150,6 +150,15 @@ public class CuckooHashTable<AnyType> {
         }
     }
 
+    public void printArray() {
+        System.out.println("当前散列表如下：");
+        System.out.println("表的大小为：" + array.length);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null)
+                System.out.println("current pos: " + i + " current value: " + array[i]);
+        }
+    }
+
     private void expand() {
         rehash((int) (array.length / MAX_LOAD));
     }
