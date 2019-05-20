@@ -35,7 +35,13 @@ public class LeftistHeap<AnyType extends Comparable<? super AnyType>> {
     }
 
     public AnyType deleteMin() {
-        return null;
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        AnyType minItem = root.element;
+        root = merge(root.left, root.right);
+
+        return minItem;
     }
 
     public boolean isEmpty() {
@@ -74,7 +80,7 @@ public class LeftistHeap<AnyType extends Comparable<? super AnyType>> {
      * @return
      */
     private Node<AnyType> merge(Node<AnyType> h1, Node<AnyType> h2) {
-        if (h1 == null) 
+        if (h1 == null)
             return h2;
         if (h2 == null)
             return h1;
